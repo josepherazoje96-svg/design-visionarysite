@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visionary — Agenzia di Intelligenza Artificiale</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="scroll.css">
+</head>
+<body>
+
+<!-- ===================== ANIMATED BACKGROUND ===================== -->
+<canvas id="bg"></canvas>
+<div class="bg-overlay"></div>
+<div class="bg-grain"></div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="nav-pill glass-strong">
+  <div class="nav-left">
+    <a href="#top" class="nav-mark" aria-label="Visionary">
+      <svg viewBox="0 0 60 84" aria-hidden="true">
+        <defs>
+          <linearGradient id="vGradNav" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#22d3ee"/>
+            <stop offset="0.55" stop-color="#3b82f6"/>
+            <stop offset="1" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#vGradNav)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9,30 L30,72"/>
+          <path d="M30,72 L47,12"/>
+          <path d="M47,12 L33,17 M47,12 L46,30"/>
+        </g>
+      </svg>
+      <span>Visionary</span>
+    </a>
+    <div class="nav-links">
+      <a href="#automazioni">servizi</a>
+      <a href="#processo">Processo</a>
+      <a href="#casi">Casi studio</a>
+      <a href="#prezzi">chi sono</a>
+    </div>
+  </div>
+  <a href="#contatto" class="btn btn-ghost nav-cta">Prenota Call</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top" data-screen-label="Hero">
+  <div class="glow glow-teal"></div>
+  <div class="glow glow-violet"></div>
+  <div class="glow glow-cyan-c"></div>
+
+  <div class="hero-inner">
+    <div class="hero-logo reveal">
+      <img src="assets/visionary-logo.png" alt="Visionary">
+    </div>
+
+    <div class="badge glass reveal"><span class="dot"></span>AI Automation Agency</div>
+
+    <h1 class="reveal">Sistemi <span class="grad-text">intelligenti</span> che lavorano per la tua azienda <span class="grad-text">giorno e notte</span>.</h1>
+
+    <p class="sub reveal" style="font-size: 17px">Riduci i costi, aumenta la produttività e libera tempo grazie a sistemi IA su misura.</p>
+
+    <div class="hero-pills reveal">
+      <span class="hpill glass"><span class="d"></span>Assistenza clienti</span>
+      <span class="hpill glass"><span class="d"></span>Processi interni</span>
+      <span class="hpill glass"><span class="d"></span>follow-up automatici</span>
+    </div>
+
+    <div class="hero-cta-row reveal">
+      <a href="#contatto" class="btn btn-white btn-lg" style="font-size: 15px">Richiedi un'analisi gratuita</a>
+      <a href="#processo" class="btn btn-glass glass-strong btn-lg">Guarda come funziona <span class="ic">↓</span></a>
+    </div>
+
+    <div class="trust reveal">
+      <span><span class="ck">✓</span> Nessun impegno</span>
+      <span><span class="ck">✓</span> Analisi personalizzata</span>
+      <span><span class="ck">✓</span> Risposta entro 24h</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== STATS STRIP ===================== -->
+<section class="stats" aria-label="Risultati">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="num grad-text">10–30<span style="font-size:0.5em">h</span></div>
+      <div class="lab">di lavoro manuale eliminato ogni settimana</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num grad-text">&lt; 2 min</div>
+      <div class="lab">tempo medio di risposta ai clienti</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num grad-text">2–4 sett.</div>
+      <div class="lab">dal primo incontro al sistema online</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEMA ===================== -->
+<section class="section-pad problema">
+  <div class="wrap">
+    <span class="section-label reveal">01 — Il problema</span>
+    <h2 class="reveal" style="margin-top:22px;">Stai perdendo <span class="grad-text">ore e clienti</span>. Entrambi hanno un costo.</h2>
+    <div class="body reveal">
+      <p>Ogni azienda funziona esattamente allo stesso modo:
+Marketing → Vendita → Chiusura → Onboarding → Delivery → Post-vendita</p>
+      <p style="margin-top:22px;">Se perdi clienti nel marketing, non importa avere un ottimo prodotto.
+
+Se non gestisci bene il post-vendita, perdi ricavi anche con molte vendite.
+
+Potresti assumere altra gente. Ma il problema non è quanti collaboratori hai, è cosa stanno facendo. Non serve più personale. Serve che il lavoro ripetitivo smetta di togliere risorse preziose.</p>
+    </div>
+    <a href="#automazioni" class="arrow-link reveal">Vedi cosa si può automatizzare nella tua azienda <span class="ar">→</span></a>
+  </div>
+</section>
+
+<!-- ===================== SERVIZI ===================== -->
+<section class="section-pad" id="automazioni">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="section-label">02 — Automazioni</span>
+      <h2>3 sistemi che <span class="grad-text">eliminano il lavoro ripetitivo</span> e recuperano i lead persi.</h2>
+    </div>
+
+    <div class="cards-3">
+      <article class="card reveal">
+        <span class="c-num">01</span>
+        <h3>Assistente per i clienti</h3>
+        <p class="one">Ogni richiesta viene gestita, qualificata e instradata in automatico anche mentre il tuo team dorme.</p>
+        <ul>
+          <li>Risposta alle domande frequenti via email, chat e WhatsApp</li>
+          <li>Qualificazione dei lead prima che arrivino al tuo commerciale</li>
+          <li>Passaggio all'operatore umano quando serve</li>
+        </ul>
+        <a href="#contatto" class="arrow-link">Vedi come risponde in meno di 2 minuti <span class="ar">→</span></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="c-num">02</span>
+        <h3>Automazione dei processi interni</h3>
+        <p class="one">Il tuo team smette di aggiornare il CRM, copiare dati e mandare notifiche a mano. Lo fa il sistema.</p>
+        <ul>
+          <li>Analisi dei processi che consumano più ore a settimana</li>
+          <li>Collegamento con gli strumenti che già usi (CRM, email, fogli)</li>
+          <li>Aggiornamenti automatici senza intervento manuale</li>
+        </ul>
+        <a href="#contatto" class="arrow-link">Calcola le ore che stai perdendo <span class="ar">→</span></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="c-num">03</span>
+        <h3>Follow-up automatico</h3>
+        <p class="one">Ogni lead che entra riceve risposta immediata e un percorso definito — senza che tu debba ricordartelo.</p>
+        <ul>
+          <li>Sequenze di follow - up per tipo di lead</li>
+          <li>Attivazione in base alla pipeline e al comportamento (No - presentato, ha risposto, ha ignorato)</li>
+          <li>Report settimanale su tassi di risposta e conversione</li>
+        </ul>
+        <a href="#contatto" class="arrow-link">Guarda un esempio di sequenza <span class="ar">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESSO ===================== -->
+<section class="section-pad processo" id="processo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="section-label">03 — Processo</span>
+      <h2>Dal primo incontro al sistema operativo: <span class="grad-text">4 passaggi</span>.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="s-num s-grad">01</div>
+        <h3>Analisi</h3>
+        <div class="s-time">1 incontro · 30 minuti</div>
+        <p>Capiamo quali processi consumano più ore e dove stai perdendo lead.</p>
+      </div>
+      <div class="step reveal">
+        <div class="s-num">02</div>
+        <h3>Progettazione</h3>
+        <div class="s-time">3–5 giorni</div>
+        <p>Stabiliamo cosa automatizzare, in quale ordine, con gli strumenti che hai già.</p>
+      </div>
+      <div class="step reveal">
+        <div class="s-num">03</div>
+        <h3>Costruzione</h3>
+        <div class="s-time">2–3 SETTIMANE</div>
+        <p>Costruiamo e testiamo il sistema. Nessun codice da parte tua. Nessuna configurazione.</p>
+      </div>
+      <div class="step reveal">
+        <div class="s-num">04</div>
+        <h3>Avvio</h3>
+        <div class="s-time">Online + monitoraggio</div>
+        <p>Il sistema va online. Monitoriamo i primi giorni e aggiustiamo ciò che non funziona.</p>
+      </div>
+    </div>
+
+    <a href="#contatto" class="arrow-link reveal">Prenota la prima analisi gratuita <span class="ar">→</span></a>
+  </div>
+</section>
+
+<!-- ===================== CASI STUDIO ===================== -->
+<section class="section-pad" id="casi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="section-label">04 — Casi studio</span>
+      <h2>3 casi. <span class="grad-text">Risultati misurabili</span>. Niente stime.</h2>
+    </div>
+
+    <div class="cases">
+      <article class="case reveal">
+        <span class="c-co">[Azienda · Settore]</span>
+        <div class="metric grad-text">−<span class="ph">XX</span>%
+          <span class="metric-sub">Tempo di risposta da <span style="color:#cdd4dd">X ore</span> a <span style="color:#cdd4dd">X minuti</span></span>
+        </div>
+        <div class="case-div"></div>
+        <div class="row">
+          <span class="rl">Problema</span>
+          <span class="rv">Il team commerciale perdeva <span class="ph">[X ore/sett.]</span> a rispondere a mano alle richieste di preventivo.</span>
+        </div>
+        <div class="row">
+          <span class="rl">Soluzione</span>
+          <span class="rv">Assistente che qualifica ogni lead in entrata e prepara la risposta iniziale.</span>
+        </div>
+        <a href="#contatto" class="arrow-link">Leggi il caso completo <span class="ar">→</span></a>
+      </article>
+
+      <article class="case reveal">
+        <span class="c-co">[Azienda · Settore]</span>
+        <div class="metric grad-text"><span class="ph">XX</span>h
+          <span class="metric-sub">risparmiate per ogni cliente inserito</span>
+        </div>
+        <div class="case-div"></div>
+        <div class="row">
+          <span class="rl">Problema</span>
+          <span class="rv">L'inserimento dei nuovi clienti richiedeva <span class="ph">[X ore]</span> di lavoro manuale per ogni contratto.</span>
+        </div>
+        <div class="row">
+          <span class="rl">Soluzione</span>
+          <span class="rv">Inserimento clienti completamente automatizzato — dalla firma all'accesso agli strumenti.</span>
+        </div>
+        <a href="#contatto" class="arrow-link">Leggi il caso completo <span class="ar">→</span></a>
+      </article>
+
+      <article class="case reveal">
+        <span class="c-co">[Azienda · Settore]</span>
+        <div class="metric grad-text">−<span class="ph">XX</span>%
+          <span class="metric-sub">errori sui dati del CRM</span>
+        </div>
+        <div class="case-div"></div>
+        <div class="row">
+          <span class="rl">Problema</span>
+          <span class="rv">Il CRM veniva aggiornato in ritardo o male — i dati erano inaffidabili.</span>
+        </div>
+        <div class="row">
+          <span class="rl">Soluzione</span>
+          <span class="rv">Ogni interazione aggiorna il CRM in automatico. Nessuno ci mette più mano.</span>
+        </div>
+        <a href="#contatto" class="arrow-link">Leggi il caso completo <span class="ar">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section-pad" id="prezzi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="section-label">05 — Prezzi</span>
+      <h2>3 piani. <span class="grad-text">Prezzi fissi</span>. Nessuna sorpresa.</h2>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <div class="p-head">
+          <span class="p-tag muted">Starter</span>
+          <span class="p-name">Una automazione</span>
+        </div>
+        <div class="price">Da <span class="ph">€XXX</span><small> /mese</small></div>
+        <p class="who">Chi ha un processo che fa perdere almeno 5 ore a settimana al team.</p>
+        <ul>
+          <li><span class="ck">✓</span> 1 automazione installata</li>
+          <li><span class="ck">✓</span> Collegamento con fino a 2 strumenti</li>
+          <li><span class="ck">✓</span> Supporto via email per 60 giorni</li>
+          <li><span class="ck">✓</span> Report mensile</li>
+        </ul>
+        <a href="#contatto" class="btn btn-ghost">Inizia con 1 automazione</a>
+      </article>
+
+      <article class="plan featured reveal">
+        <div class="p-head">
+          <span class="p-tag hot">Growth · Più scelto</span>
+          <span class="p-name">Crescita</span>
+        </div>
+        <div class="price">Da <span class="ph">€XXX</span><small> /mese</small></div>
+        <p class="who">Chi vuole automatizzare più aree e crescere senza aumentare il team.</p>
+        <ul>
+          <li><span class="ck">✓</span> Fino a 3 automazioni installate</li>
+          <li><span class="ck">✓</span> Collegamento con tutti gli strumenti in uso</li>
+          <li><span class="ck">✓</span> Assistente per i clienti incluso</li>
+          <li><span class="ck">✓</span> Supporto prioritario per 90 giorni</li>
+          <li><span class="ck">✓</span> Report settimanale con dati sulle prestazioni</li>
+        </ul>
+        <a href="#contatto" class="btn btn-grad">Parlaci del tuo caso</a>
+      </article>
+
+      <article class="plan reveal">
+        <div class="p-head">
+          <span class="p-tag muted">Full</span>
+          <span class="p-name">Su misura</span>
+        </div>
+        <div class="price">Preventivo</div>
+        <p class="who">Aziende con processi complessi o che vogliono un partner continuativo.</p>
+        <ul>
+          <li><span class="ck">✓</span> Automazioni senza limite</li>
+          <li><span class="ck">✓</span> Analisi dei processi interni</li>
+          <li><span class="ck">✓</span> Tempi di risposta garantiti sul supporto</li>
+          <li><span class="ck">✓</span> Aggiornamenti continui</li>
+          <li><span class="ck">✓</span> Referente dedicato</li>
+        </ul>
+        <a href="#contatto" class="btn btn-ghost">Parliamone</a>
+      </article>
+    </div>
+
+    <div class="pricing-foot reveal">
+      <a href="#contatto" class="arrow-link">Non sei sicuro del piano giusto? Lo definiamo insieme nella chiamata <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section-pad" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="section-label">06 — Domande frequenti</span>
+      <h2><span class="grad-text">Risposte dirette</span>.</h2>
+    </div>
+
+    <div class="faq-grid reveal">
+      <div class="faq-item">
+        <button class="faq-q">Costa troppo per la mia azienda. <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Dipende da quante ore a settimana il tuo team spende su lavoro ripetitivo. Se spende 10 ore/settimana e un'ora costa 25 €, sono 1.000 €/mese in lavoro che un sistema può fare. La maggior parte dei clienti recupera il costo entro il primo mese. Prima di decidere, calcoliamo insieme quanto ti stanno costando queste ore.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo ci vuole prima di vedere i risultati? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Le prime automazioni vanno online entro 2–4 settimane. Entro il primo mese i lead ricevono risposta immediata e il lavoro manuale si riduce in modo visibile.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">La mia azienda è diversa — non so se funziona per me. <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Ogni azienda ha processi diversi. La prima chiamata è un'analisi del tuo caso, non una demo. Se non vediamo margine per aiutarti, te lo diciamo.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Chi mi supporta dopo l'installazione? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Ogni progetto include un periodo di supporto. Monitoriamo il sistema, correggiamo i problemi e aggiustiamo sulla base dei dati. Non spariremo dopo la consegna.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Che risultati posso aspettarmi in concreto? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">I clienti risparmiano tra 10 e 30 ore di lavoro manuale a settimana. Il tempo di risposta ai lead scende da ore a minuti. I numeri variano — te li stimiamo prima di iniziare.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Si collega agli strumenti che già uso? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sì. Lavoriamo con CRM, piattaforme email, fogli di calcolo e strumenti di messaggistica. Se hai dubbi su uno strumento specifico, portalo nella chiamata.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Se smetto di lavorare con voi, il sistema rimane operativo? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sì. Costruiamo su piattaforme standard che puoi gestire in autonomia o affidare a chiunque. Non crei dipendenza da noi — crei un sistema che appartiene alla tua azienda.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I dati dei miei clienti dove vanno a finire? <span class="faq-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Lavoriamo sulle tue piattaforme. I tuoi dati restano nei tuoi strumenti — non li trasferiamo, non li archiviamo su server di terze parti.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-foot reveal">
+      <a href="#contatto" class="arrow-link">Hai un'altra domanda? Scrivici direttamente <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINALE ===================== -->
+<section class="section-pad cta-final" id="contatto">
+  <div class="wrap">
+    <div class="cta-card glass-strong reveal">
+      <span class="kicker"><span class="dot"></span>Analisi gratuita</span>
+      <h2>30 minuti. Sai <span class="grad-text">esattamente quante ore</span> stai perdendo ogni settimana.</h2>
+      <p class="sub">Nessun impegno. Nessuna demo. Solo un'analisi reale del tuo caso.</p>
+      <a href="#contatto" class="btn btn-white btn-lg">Prenota la chiamata gratuita</a>
+      <p class="urgency">Prendiamo al massimo <b>4 nuovi clienti</b> al mese. Questo mese restano <b>2 posti</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="#top" class="footer-logo" aria-label="Visionary">
+          <img src="assets/visionary-logo.png" alt="Visionary">
+        </a>
+        <p class="f-tag">Installiamo sistemi di intelligenza artificiale che fanno il lavoro ripetitivo al posto del tuo team.</p>
+      </div>
+      <div class="f-links">
+        <div class="f-col">
+          <span class="h">Sito</span>
+          <a href="#automazioni">Automazioni</a>
+          <a href="#processo">Processo</a>
+          <a href="#casi">Casi studio</a>
+          <a href="#prezzi">Prezzi</a>
+        </div>
+        <div class="f-col">
+          <span class="h">Contatti</span>
+          <a href="#contatto">Prenota una call</a>
+          <a href="mailto:ciao@visionary.ai">ciao@visionary.ai</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="privacy">I tuoi dati restano nei tuoi strumenti — non li trasferiamo, non li archiviamo su server di terze parti.</span>
+      <span>© 2026 Visionary. Tutti i diritti riservati.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
