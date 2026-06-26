@@ -3,27 +3,15 @@
    Loaded AFTER styles.css to override the base look.
    ============================================================ */
 
-/* ---------- Black canvas background ---------- */
+/* ---------- Solid black background ---------- */
 html, body { background: #000; }
 
-#bg {
-  position: fixed;
-  inset: -6%;
-  width: 112%;
-  height: 112%;
-  z-index: -2;
-  display: block;
-  filter: blur(40px) saturate(1.35);
-  pointer-events: none;
-}
-.bg-overlay {
+.bg-solid {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
+  background: #000;
   pointer-events: none;
-  background:
-    radial-gradient(130% 90% at 50% -10%, transparent 42%, rgba(0,0,0,0.42) 100%),
-    radial-gradient(100% 100% at 50% 60%, rgba(0,0,0,0.16), rgba(0,0,0,0.5));
 }
 .bg-grain {
   position: fixed;

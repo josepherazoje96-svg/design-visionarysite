@@ -3,6 +3,7 @@ import { AnimatedBg } from './components/AnimatedBg'
 import { AuditForm } from './components/AuditForm'
 import { FAQ } from './components/FAQ'
 import { Founder } from './components/Founder'
+import { Odometer } from './components/Odometer'
 import { ROICalculator } from './components/ROICalculator'
 import { SplineHero } from './components/SplineHero'
 import { useAnimations } from './hooks/useAnimations'
@@ -53,15 +54,19 @@ function Landing() {
       <section className="stats" aria-label="Risultati">
         <div className="stats-grid">
           <div className="stat reveal">
-            <div className="num grad-text">10–30<span style={{ fontSize: '0.5em' }}>h</span></div>
+            <div className="num grad-text">
+              <Odometer value={10} />–<Odometer value={30} /><span style={{ fontSize: '0.5em' }}>h</span>
+            </div>
             <div className="lab">di lavoro manuale eliminato ogni settimana</div>
           </div>
           <div className="stat reveal">
-            <div className="num grad-text">&lt; 2 min</div>
+            <div className="num grad-text">&lt; <Odometer value={2} /> min</div>
             <div className="lab">tempo medio di risposta ai clienti</div>
           </div>
           <div className="stat reveal">
-            <div className="num grad-text">2–4 sett.</div>
+            <div className="num grad-text">
+              <Odometer value={2} />–<Odometer value={4} /> sett.
+            </div>
             <div className="lab">dal primo incontro al sistema online</div>
           </div>
         </div>
