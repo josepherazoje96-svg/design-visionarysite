@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ---------- Solid black background ---------- */
-html, body { background: #000; }
+html, body { background: #000; overflow-x: hidden; max-width: 100%; }
 
 .bg-solid {
   position: fixed;
