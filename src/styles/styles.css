@@ -1512,9 +1512,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: 0.02
   .cr-kpi { min-width: 45%; border-right: none; border-bottom: 1px solid var(--line-soft); padding-bottom: 12px; margin-bottom: 4px; }
   .cr-kpi:nth-child(odd) { border-right: 1px solid var(--line-soft); }
   .cr-kpi:last-child { border-bottom: none; min-width: 100%; }
-  /* Hero CTA buttons: full width on small mobile */
+  /* Hero CTA buttons: smaller on mobile */
   .hero-cta-row { display: flex; flex-direction: column; gap: 12px; width: 100%; }
   .hero-cta-row .btn { width: 100%; justify-content: center; }
+  #top .btn-lg { padding: 13px 22px; font-size: 14px; }
   /* CTA finale card */
   .cta-card .btn { width: 100%; }
   /* Footer bottom: stack */
