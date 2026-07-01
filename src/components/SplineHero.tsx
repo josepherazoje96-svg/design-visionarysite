@@ -22,6 +22,14 @@ export function SplineHero() {
         fill="white"
       />
 
+      {/* Mobile animated background — replaces Spline 3D scene on small screens */}
+      <div className="mobile-hero-bg md:hidden">
+        <div className="mobile-orb mobile-orb--cyan" />
+        <div className="mobile-orb mobile-orb--violet" />
+        <div className="mobile-orb mobile-orb--teal" />
+        <div className="mobile-hero-grid" />
+      </div>
+
       <div className="flex" style={{ minHeight: '100svh' }}>
 
         {/* ── LEFT: brand copy ── */}
