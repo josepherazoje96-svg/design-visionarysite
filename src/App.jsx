@@ -103,63 +103,67 @@ function Landing() {
       {/* SERVIZI */}
       <section className="section-pad" id="automazioni">
         <div className="wrap">
-          <div className="sec-head reveal">
-            <span className="section-label">02 — Automazioni</span>
-            <h2>4 sistemi che <span className="grad-text">eliminano il lavoro ripetitivo</span> e recuperano i lead persi.</h2>
+          <div className="svc-head reveal">
+            <span className="section-label">02 — Servizi</span>
+            <h2>Quello che possiamo fare per <span className="grad-text">te</span>.</h2>
+            <p className="svc-subtitle">Qualcosa ti ruba ore o stai perdendo lead? Lo automatizziamo o lo costruiamo su misura. Ci dici cosa serve, ti proponiamo la soluzione.</p>
+            <p className="svc-niche">Ideale per studi professionali, cliniche, agenzie immobiliari e qualsiasi azienda dove un appuntamento perso vale centinaia di euro.</p>
           </div>
 
-          <div className="cards-3">
-            <article className="card reveal">
-              <span className="c-num">01</span>
-              <h3>Assistente per i clienti</h3>
-              <p className="one">Ogni richiesta viene gestita, qualificata e instradata in automatico anche mentre il tuo team dorme.</p>
-              <ul>
-                <li>Risposta alle domande frequenti via email, chat e WhatsApp</li>
-                <li>Qualificazione dei lead prima che arrivino al tuo commerciale</li>
-                <li>Passaggio all'operatore umano quando serve</li>
-              </ul>
-              <a href="#prezzi" className="arrow-link">Vedi come risponde in meno di 2 minuti <span className="ar">→</span></a>
+          <div className="svc-grid">
+            <article className="svc-card reveal">
+              <div className="svc-icon svc-icon--violet">⚙️</div>
+              <h3>Automatizzazioni su misura</h3>
+              <p>Se si fa a mano e si ripete, si può automatizzare. Lead generation, preventivi automatici, qualificatori di lead, risposte, prenotazione appuntamenti e connessione dei tuoi strumenti.</p>
+              <div className="svc-tags">
+                <span className="svc-tag">Lead generation</span>
+                <span className="svc-tag">Preventivi automatici</span>
+                <span className="svc-tag">Qualificatore lead</span>
+              </div>
             </article>
 
-            <article className="card reveal">
-              <span className="c-num">02</span>
-              <h3>Automazione dei processi interni</h3>
-              <p className="one">Il tuo team non aggiorna più il CRM, non copia dati e non invia notifiche manualmente: lo fa il sistema.</p>
-              <ul>
-                <li>Analisi dei processi che consumano più ore a settimana</li>
-                <li>Collegamento con gli strumenti che già usi (CRM, email, fogli)</li>
-                <li>Aggiornamenti automatici senza intervento manuale</li>
-              </ul>
-              <a href="#calcolatrice" className="arrow-link">Calcola le ore che stai perdendo <span className="ar">→</span></a>
+            <article className="svc-card reveal">
+              <div className="svc-icon svc-icon--cyan">🤖</div>
+              <h3>Chatbot e Agente AI</h3>
+              <p>Un assistente che risponde e vende per te 24/7. Addestrato con il tuo business, il tuo brand e i tuoi processi, connesso al tuo WhatsApp o al tuo sito.</p>
+              <div className="svc-tags">
+                <span className="svc-tag">Bot WhatsApp</span>
+                <span className="svc-tag">Assistenza 24/7</span>
+                <span className="svc-tag">CRM connesso</span>
+              </div>
             </article>
 
-            <article className="card reveal">
-              <span className="c-num">03</span>
-              <h3>Follow-up automatico</h3>
-              <p className="one">Ogni lead che entra riceve una risposta immediata e un percorso di follow-up definito, senza alcun intervento manuale.</p>
-              <ul>
-                <li>Sequenze di follow-up per tipo di lead</li>
-                <li>Attivazione in base alla pipeline e al comportamento</li>
-                <li>Report settimanale su tassi di risposta e conversione</li>
-              </ul>
-              <a href="#prezzi" className="arrow-link">Guarda un esempio di sequenza <span className="ar">→</span></a>
+            <article className="svc-card reveal">
+              <div className="svc-icon svc-icon--blue">🖥️</div>
+              <h3>Siti web e applicazioni</h3>
+              <p>Siti web, landing page e funnel che vendono, e app su misura per il tuo business. Design curato, veloci e pronti a convertire le visite in clienti.</p>
+              <div className="svc-tags">
+                <span className="svc-tag">Siti & landing</span>
+                <span className="svc-tag">Funnel di vendita</span>
+                <span className="svc-tag">App su misura</span>
+              </div>
             </article>
 
-            <article className="card reveal">
-              <span className="c-num">04</span>
-              <h3>La tua presenza online, senza il tuo tempo</h3>
-              <p className="one">
-                La maggior parte degli imprenditori sa di dover pubblicare contenuti. Pochissimi
-                hanno il tempo di farlo con costanza. Per questo creiamo una versione digitale di
-                te che comunica con il tuo volto, la tua voce e il tuo stile, mentre il nostro
-                team sviluppa strategie e contenuti per alimentarla.
-              </p>
-              <ul>
-                <li>Creazione del tuo avatar AI personalizzato</li>
-                <li>Piano editoriale strategico mensile</li>
-                <li>Produzione continua di contenuti senza registrazioni</li>
-              </ul>
-              <a href="#prezzi" className="arrow-link">Scopri come funziona <span className="ar">→</span></a>
+            <article className="svc-card reveal">
+              <div className="svc-icon svc-icon--teal">🔧</div>
+              <h3>Software su misura</h3>
+              <p>Sviluppo il sistema che il tuo business necessita: il tuo CRM proprietario, pannelli di controllo, strumenti interni e piattaforme costruite al tuo modo di lavorare.</p>
+              <div className="svc-tags">
+                <span className="svc-tag">CRM proprietario</span>
+                <span className="svc-tag">Pannelli & dashboard</span>
+                <span className="svc-tag">Strumenti interni</span>
+              </div>
+            </article>
+
+            <article className="svc-card reveal">
+              <div className="svc-icon svc-icon--blue">✦</div>
+              <h3>Presenza online, senza il tuo tempo</h3>
+              <p>Il tuo avatar AI che comunica con il tuo volto, la tua voce e il tuo stile. Strategia, piano editoriale e contenuti — pubblicati senza bloccare la tua agenda.</p>
+              <div className="svc-tags">
+                <span className="svc-tag">Avatar AI</span>
+                <span className="svc-tag">Piano editoriale</span>
+                <span className="svc-tag">Produzione contenuti</span>
+              </div>
             </article>
           </div>
         </div>
@@ -233,19 +237,19 @@ function Landing() {
             </article>
 
             <article className="case reveal">
-              <span className="c-co">Centro Estetico</span>
+              <span className="c-co">Clinica Estetica</span>
               <div className="metric grad-text">
-                12h
-                <span className="metric-sub">risparmiate a settimana sul gestionale</span>
+                14h
+                <span className="metric-sub">risparmiate a settimana su burocrazia e follow-up</span>
               </div>
               <div className="case-div" />
               <div className="row">
                 <span className="rl">Problema</span>
-                <span className="rv">Ogni nuovo cliente richiedeva inserimento manuale su tre piattaforme diverse: CRM, email e agenda.</span>
+                <span className="rv">Ogni paziente richiedeva inserimento manuale: cartella, modulo di consenso, reminder pre-procedura e follow-up post-trattamento. La segreteria gestiva tutto a mano.</span>
               </div>
               <div className="row">
                 <span className="rl">Soluzione</span>
-                <span className="rv">Onboarding completamente automatizzato — dalla prenotazione online all'accesso agli strumenti, senza toccare nulla.</span>
+                <span className="rv">Flusso automatizzato dalla prenotazione: modulo anamnestico inviato in anticipo via WhatsApp, reminder 48h e 2h prima della procedura, follow-up post-trattamento per raccogliere feedback e proporre il prossimo appuntamento.</span>
               </div>
             </article>
 
