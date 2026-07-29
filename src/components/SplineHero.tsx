@@ -54,7 +54,7 @@ export function SplineHero() {
               className="w-2 h-2 rounded-full flex-none"
               style={{ background: 'var(--cyan)', boxShadow: '0 0 10px 1px var(--cyan)' }}
             />
-            AI Automation Agency
+            AI Automation Agency · Torino
           </div>
 
           {/* Headline */}

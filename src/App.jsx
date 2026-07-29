@@ -107,7 +107,7 @@ function Landing() {
             <span className="section-label">02 · Servizi</span>
             <h2>Quello che possiamo fare per <span className="grad-text">te</span>.</h2>
             <p className="svc-subtitle">Qualcosa ti ruba ore o stai perdendo lead? Lo automatizziamo o lo costruiamo su misura. Ci dici cosa serve, ti proponiamo la soluzione.</p>
-            <p className="svc-niche">Ideale per studi professionali, cliniche, agenzie immobiliari e qualsiasi azienda dove un appuntamento perso vale centinaia di euro.</p>
+            <p className="svc-niche">Ideale per studi professionali, cliniche estetiche, agenzie immobiliari e imprenditori a Torino e in tutta Italia: dove un appuntamento perso vale centinaia di euro.</p>
           </div>
 
           <div className="svc-grid">
