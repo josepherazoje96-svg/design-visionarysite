@@ -221,14 +221,14 @@ export function ROICalculator() {
             </>
           ) : (
             <div className="calc-email-sent">
-              <p>✓ Perfetto — il report personalizzato sta per arrivare nella tua casella.</p>
+              <p>✓ Perfetto: il report personalizzato sta per arrivare nella tua casella.</p>
               <a href="#prezzi" className="arrow-link">Vuoi parlarne direttamente? Prenota una call <span className="ar">→</span></a>
             </div>
           )}
         </div>
 
         <p className="calc-note reveal">
-          Stima calcolata su un tasso di chiusura medio del 20% sui lead recuperati e {ASSUNZIONI.settimanePerMese} settimane lavorative al mese —
+          Stima calcolata su un tasso di chiusura medio del 20% sui lead recuperati e {ASSUNZIONI.settimanePerMese} settimane lavorative al mese,
           gli stessi parametri prudenziali che usiamo nelle prime analisi con i clienti. È un punto di partenza per ragionare sui numeri,
           non un audit completo: quelli reali li costruiamo insieme nella prima chiamata.
         </p>

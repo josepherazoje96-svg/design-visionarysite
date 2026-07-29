@@ -148,7 +148,7 @@ export function AuditForm() {
                 <div id="auditStep1">
                   <div className="form-step-head">
                     <h3 className="form-step-title">Chi sei</h3>
-                    <p className="form-step-sub">Passo 1 di 2 — informazioni di base</p>
+                    <p className="form-step-sub">Passo 1 di 2: informazioni di base</p>
                   </div>
                   <div className="form-fields">
                     <div className="form-group">
@@ -199,7 +199,7 @@ export function AuditForm() {
                 <div id="auditStep2">
                   <div className="form-step-head">
                     <h3 className="form-step-title">La tua azienda</h3>
-                    <p className="form-step-sub">Passo 2 di 2 — aiutaci a capire il contesto</p>
+                    <p className="form-step-sub">Passo 2 di 2: aiutaci a capire il contesto</p>
                   </div>
                   <div className="form-fields">
                     <div className="form-group">
@@ -261,7 +261,7 @@ export function AuditForm() {
                   <h3 className="audit-success-title">Richiesta ricevuta.</h3>
                   <p className="audit-success-text">
                     Ti risponderemo entro 24 ore per fissare la tua Diagnosi Operativa.
-                    Controlla la posta elettronica — anche la cartella spam.
+                    Controlla la posta elettronica, anche la cartella spam.
                   </p>
                   <p className="audit-success-sub">
                     Nel frattempo, puoi usare il calcolatore ROI per avere un'idea del valore che l'automazione può generare insieme.

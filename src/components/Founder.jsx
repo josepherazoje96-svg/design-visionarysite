@@ -3,19 +3,19 @@ const STEPS = [
     num: '01',
     eyebrow: 'Le origini',
     title: 'Bartender a 18 anni: la prima lezione di sistema',
-    body: "Gestire 80 clienti contemporaneamente, con ordini che si sovrappongono, tempi stretti e zero margine di errore. Dietro un bancone impari che senza un sistema preciso, il caos vince sempre. Joseph impara presto che la vera abilità non è lavorare di più — è costruire un metodo che funzioni anche quando sei sotto pressione.",
+    body: "Gestire 80 clienti contemporaneamente, con ordini che si sovrappongono, tempi stretti e zero margine di errore. Dietro un bancone impari che senza un sistema preciso, il caos vince sempre. Joseph impara presto che la vera abilità non è lavorare di più: è costruire un metodo che funzioni anche quando sei sotto pressione.",
   },
   {
     num: '02',
     eyebrow: 'La svolta operativa',
     title: 'Amazon: logistica millimetrica su scala',
-    body: "Lavorare nell'ecosistema Amazon significa vedere da vicino cosa vuol dire ottimizzare ogni singolo secondo di un processo. Ogni movimento è tracciato, ogni inefficienza è quantificata, ogni costo è visibile. Joseph vede per la prima volta cosa può fare un sistema ben costruito — e decide che questa mentalità deve arrivare alle PMI italiane.",
+    body: "Lavorare nell'ecosistema Amazon significa vedere da vicino cosa vuol dire ottimizzare ogni singolo secondo di un processo. Ogni movimento è tracciato, ogni inefficienza è quantificata, ogni costo è visibile. Joseph vede per la prima volta cosa può fare un sistema ben costruito, e decide che questa mentalità deve arrivare alle PMI italiane.",
   },
   {
     num: '03',
     eyebrow: 'Il primo laboratorio',
     title: "Il brand streetwear: l'automazione per necessità",
-    body: "Lanciare un brand richiede di gestire ordini, clienti, fornitori, social e logistica allo stesso tempo — spesso da soli. Joseph non può permettersi un team, quindi costruisce sistemi che lavorano al suo posto. Non per scelta filosofica: per sopravvivenza. Funziona. E realizza che quello che ha costruito per sé stesso è esattamente quello di cui hanno bisogno migliaia di imprenditori italiani.",
+    body: "Lanciare un brand richiede di gestire ordini, clienti, fornitori, social e logistica allo stesso tempo, spesso da soli. Joseph non può permettersi un team, quindi costruisce sistemi che lavorano al suo posto. Non per scelta filosofica: per sopravvivenza. Funziona. E realizza che quello che ha costruito per sé stesso è esattamente quello di cui hanno bisogno migliaia di imprenditori italiani.",
   },
 ]
 
@@ -30,7 +30,7 @@ export function Founder() {
           </h2>
           <p className="founder-sub">
             Visionary non nasce da un corso online o da un'idea teorica. Nasce dall'esigenza reale
-            di un imprenditore che ha vissuto il caos operativo sulla propria pelle — e ha trovato
+            di un imprenditore che ha vissuto il caos operativo sulla propria pelle, e ha trovato
             il modo di uscirne.
           </p>
         </div>
@@ -61,7 +61,7 @@ export function Founder() {
                 <p className="founder-body">
                   Visionary nasce per portare la stessa mentalità operativa di Amazon alle PMI
                   italiane. Non vendiamo tool no-code o prompt di ChatGPT. Costruiamo infrastrutture
-                  intelligenti — sistemi che pensano, reagiscono e scalano — così tu puoi tornare a
+                  intelligenti: sistemi che pensano, reagiscono e scalano. Così tu puoi tornare a
                   fare l'imprenditore invece del data-entry manager della tua stessa azienda.
                 </p>
                 <a href="#prezzi" className="btn btn-white founder-cta">

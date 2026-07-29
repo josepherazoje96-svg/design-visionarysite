@@ -75,7 +75,7 @@ function Landing() {
       {/* PROBLEMA */}
       <section className="section-pad problema">
         <div className="wrap">
-          <span className="section-label reveal">01 — Il problema</span>
+          <span className="section-label reveal">01 · Il problema</span>
           <h2 className="reveal" style={{ marginTop: '22px' }}>
             Stai perdendo <span className="grad-text">ore e clienti</span>. Entrambi hanno un costo.
           </h2>
@@ -104,7 +104,7 @@ function Landing() {
       <section className="section-pad" id="automazioni">
         <div className="wrap">
           <div className="svc-head reveal">
-            <span className="section-label">02 — Servizi</span>
+            <span className="section-label">02 · Servizi</span>
             <h2>Quello che possiamo fare per <span className="grad-text">te</span>.</h2>
             <p className="svc-subtitle">Qualcosa ti ruba ore o stai perdendo lead? Lo automatizziamo o lo costruiamo su misura. Ci dici cosa serve, ti proponiamo la soluzione.</p>
             <p className="svc-niche">Ideale per studi professionali, cliniche, agenzie immobiliari e qualsiasi azienda dove un appuntamento perso vale centinaia di euro.</p>
@@ -158,7 +158,7 @@ function Landing() {
             <article className="svc-card reveal">
               <div className="svc-icon svc-icon--blue">✦</div>
               <h3>Presenza online, senza il tuo tempo</h3>
-              <p>Il tuo avatar AI che comunica con il tuo volto, la tua voce e il tuo stile. Strategia, piano editoriale e contenuti — pubblicati senza bloccare la tua agenda.</p>
+              <p>Il tuo avatar AI che comunica con il tuo volto, la tua voce e il tuo stile. Strategia, piano editoriale e contenuti: pubblicati senza bloccare la tua agenda.</p>
               <div className="svc-tags">
                 <span className="svc-tag">Avatar AI</span>
                 <span className="svc-tag">Piano editoriale</span>
@@ -173,7 +173,7 @@ function Landing() {
       <section className="section-pad processo" id="processo">
         <div className="wrap">
           <div className="sec-head reveal">
-            <span className="section-label">03 — Processo</span>
+            <span className="section-label">03 · Processo</span>
             <h2>Dal primo incontro al sistema operativo: <span className="grad-text">4 passaggi</span>.</h2>
           </div>
 
@@ -214,7 +214,7 @@ function Landing() {
       <section className="section-pad" id="casi">
         <div className="wrap">
           <div className="sec-head reveal">
-            <span className="section-label">04 — Casi studio</span>
+            <span className="section-label">04 · Casi studio</span>
             <h2>4 casi. <span className="grad-text">Risultati misurabili</span>. Niente stime.</h2>
           </div>
 
@@ -232,7 +232,7 @@ function Landing() {
               </div>
               <div className="row">
                 <span className="rl">Soluzione</span>
-                <span className="rv">Sequenza automatica di conferma e reminder via WhatsApp — nessun intervento manuale, zero dimenticanze.</span>
+                <span className="rv">Sequenza automatica di conferma e reminder via WhatsApp: nessun intervento manuale, zero dimenticanze.</span>
               </div>
             </article>
 
@@ -361,7 +361,7 @@ function Landing() {
           </div>
           <div className="footer-bottom">
             <span className="privacy">
-              I tuoi dati restano nei tuoi strumenti — non li trasferiamo, non li archiviamo su server di terze parti.
+              I tuoi dati restano nei tuoi strumenti: non li trasferiamo, non li archiviamo su server di terze parti.
             </span>
             <span>© 2026 Visionary. Tutti i diritti riservati.</span>
           </div>

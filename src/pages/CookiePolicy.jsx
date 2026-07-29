@@ -245,15 +245,15 @@ export default function CookiePolicy() {
           <li>personalizzare le scelte per categoria/fornitore.</li>
         </ul>
         <p>
-          Le Sue preferenze sono sempre modificabili in seguito — vedi capitolo 9 "Come gestire i
-          cookie dal browser".
+          Le Sue preferenze sono sempre modificabili in seguito (vedi capitolo 9 "Come gestire i
+          cookie dal browser").
         </p>
       </section>
 
       <section className="legal-section">
         <h2>8. Servizi di terze parti utilizzati sul Sito</h2>
 
-        <h3>8.1 Google Analytics 4 (GA4) — Google Ireland Limited</h3>
+        <h3>8.1 Google Analytics 4 (GA4) · Google Ireland Limited</h3>
         <p>
           Utilizziamo GA4, previa accettazione dei cookie analitici, per raccogliere dati in forma
           aggregata (statistiche di navigazione, interazioni con le pagine). Tutele configurate:
@@ -269,7 +269,7 @@ export default function CookiePolicy() {
           alternativa, può usare l'add-on di opt-out del browser fornito da Google.
         </p>
 
-        <h3>8.2 Meta Pixel — Meta Platforms Ireland Limited</h3>
+        <h3>8.2 Meta Pixel · Meta Platforms Ireland Limited</h3>
         <p>
           Utilizzato solo previo consenso per misurare conversioni e attivare campagne/remarketing
           su Facebook e Instagram. Raccoglie eventi (es. pageview, lead) che possono contribuire

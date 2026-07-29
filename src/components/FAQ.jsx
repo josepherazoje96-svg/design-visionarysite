@@ -10,7 +10,7 @@ const FAQS = [
     a: 'Le prime automazioni vanno online entro 2–4 settimane. Entro il primo mese i lead ricevono risposta immediata e il lavoro manuale si riduce in modo visibile.',
   },
   {
-    q: 'La mia azienda è diversa — non so se funziona per me.',
+    q: 'La mia azienda è diversa, non so se funziona per me.',
     a: 'Ogni azienda ha processi diversi. La prima chiamata è un\'analisi del tuo caso, non una demo. Se non vediamo margine per aiutarti, te lo diciamo.',
   },
   {
@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: 'Che risultati posso aspettarmi in concreto?',
-    a: 'I clienti risparmiano tra 10 e 30 ore di lavoro manuale a settimana. Il tempo di risposta ai lead scende da ore a minuti. I numeri variano — te li stimiamo prima di iniziare.',
+    a: 'I clienti risparmiano tra 10 e 30 ore di lavoro manuale a settimana. Il tempo di risposta ai lead scende da ore a minuti. I numeri variano: te li stimiamo prima di iniziare.',
   },
   {
     q: 'Si collega agli strumenti che già uso?',
@@ -27,11 +27,11 @@ const FAQS = [
   },
   {
     q: 'Se smetto di lavorare con voi, il sistema rimane operativo?',
-    a: 'Sì. Costruiamo su piattaforme standard che puoi gestire in autonomia o affidare a chiunque. Non crei dipendenza da noi — crei un sistema che appartiene alla tua azienda.',
+    a: 'Sì. Costruiamo su piattaforme standard che puoi gestire in autonomia o affidare a chiunque. Non crei dipendenza da noi: crei un sistema che appartiene alla tua azienda.',
   },
   {
     q: 'I dati dei miei clienti dove vanno a finire?',
-    a: 'Lavoriamo sulle tue piattaforme. I tuoi dati restano nei tuoi strumenti — non li trasferiamo, non li archiviamo su server di terze parti.',
+    a: 'Lavoriamo sulle tue piattaforme. I tuoi dati restano nei tuoi strumenti: non li trasferiamo, non li archiviamo su server di terze parti.',
   },
 ]
 
@@ -47,7 +47,7 @@ export function FAQ() {
     <section className="section-pad" id="faq">
       <div className="wrap">
         <div className="sec-head reveal">
-          <span className="section-label">06 — Domande frequenti</span>
+          <span className="section-label">06 · Domande frequenti</span>
           <h2><span className="grad-text">Risposte dirette</span>.</h2>
         </div>
 
