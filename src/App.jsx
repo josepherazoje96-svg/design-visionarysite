@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { AnimatedBg } from './components/AnimatedBg'
 import { AuditForm } from './components/AuditForm'
@@ -5,11 +6,14 @@ import { FAQ } from './components/FAQ'
 import { Founder } from './components/Founder'
 import { Odometer } from './components/Odometer'
 import { ROICalculator } from './components/ROICalculator'
-import { SplineHero } from './components/SplineHero'
+import { LeadScene } from './components/LeadScene'
 import { useAnimations } from './hooks/useAnimations'
 import CookiePolicy from './pages/CookiePolicy'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+
+const HERO_VIDEO =
+  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4'
 
 export default function App() {
   return (
@@ -22,8 +26,24 @@ export default function App() {
   )
 }
 
+const MARQUEE = [
+  'Lead generation', 'Preventivi automatici', 'Qualificatore lead', 'Bot WhatsApp', 'Assistenza 24/7',
+  'CRM connesso', 'Siti & landing', 'Funnel di vendita', 'App su misura', 'Dashboard', 'Avatar AI', 'Piano editoriale',
+]
+
 function Landing() {
   useAnimations()
+  const [menu, setMenu] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = menu ? 'hidden' : ''
+    const onKey = (e) => e.key === 'Escape' && setMenu(false)
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [menu])
 
   return (
     <>
@@ -31,27 +51,85 @@ function Landing() {
 
       {/* NAV */}
       <nav className="nav" id="nav">
-        <div className="nav-pill glass-strong">
-          <div className="nav-left">
-            <a href="#top" className="nav-mark" aria-label="Visionary">
-              <img src="/assets/visionary-logo.png" alt="Visionary" />
-            </a>
-            <div className="nav-links">
-              <a href="#automazioni">Servizi</a>
-              <a href="#processo">Processo</a>
-              <a href="#casi">Casi studio</a>
-              <a href="#fondatore">Chi sono</a>
-            </div>
+        <div className="nav-pill rise" style={{ '--d': '0s' }}>
+          <a href="#top" className="nav-mark" aria-label="Visionary">
+            <img src="/assets/visionary-logo.png" alt="Visionary" />
+          </a>
+          <div className="nav-links">
+            <a href="#automazioni">Servizi</a>
+            <a href="#processo">Processo</a>
+            <a href="#casi">Casi studio</a>
+            <a href="#fondatore">Chi sono</a>
           </div>
-          <a href="#prezzi" className="btn btn-ghost nav-cta">Prenota Call</a>
+          <a href="#prezzi" className="btn btn-white nav-cta">Prenota Call</a>
+          <button
+            type="button"
+            className={`burger${menu ? ' is-open' : ''}`}
+            aria-label={menu ? 'Chiudi menu' : 'Apri menu'}
+            aria-expanded={menu}
+            onClick={() => setMenu((m) => !m)}
+          >
+            <i /><i />
+          </button>
         </div>
       </nav>
 
-      {/* HERO — Spline 3D split layout */}
-      <SplineHero />
+      <div className={`menu${menu ? ' is-open' : ''}`} aria-hidden={!menu} onClick={() => setMenu(false)}>
+        <ul className="menu-list">
+          <li><a href="#automazioni">Servizi</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#casi">Casi studio</a></li>
+          <li><a href="#fondatore">Chi sono</a></li>
+        </ul>
+        <a href="#prezzi" className="btn btn-white btn-lg">Prenota Call</a>
+      </div>
+
+      {/* HERO */}
+      <header id="top" className="cx-hero">
+        <div className="cx-plate" aria-hidden="true">
+          <video
+            className="cx-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            ref={(el) => {
+              if (el && window.matchMedia('(prefers-reduced-motion: reduce)').matches) el.pause()
+            }}
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+        </div>
+        <div className="cx-hero-inner">
+          <span className="cx-eyebrow rise" style={{ '--d': '.08s' }}><i />AI Automation Agency · Torino</span>
+          <h1 className="cx-h1 rise" style={{ '--d': '.16s' }}>
+            Sistemi <em>intelligenti</em> che lavorano per la tua azienda <em>giorno e notte</em>.
+          </h1>
+          <p className="cx-sub rise" style={{ '--d': '.26s' }}>
+            Riduci i costi, aumenta la produttività e libera tempo grazie a sistemi IA su misura.
+          </p>
+          <div className="cx-cta rise" style={{ '--d': '.36s' }}>
+            <a href="#contatto" className="btn btn-glass btn-lg">
+              Richiedi un'analisi gratuita
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+            </a>
+            <a href="#processo" className="btn btn-text btn-lg">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" /></svg>
+              Guarda come funziona
+            </a>
+          </div>
+          <div className="cx-trust rise" style={{ '--d': '.46s' }}>
+            <span>Nessun impegno</span>
+            <span>Analisi personalizzata</span>
+            <span>Risposta entro 24h</span>
+          </div>
+        </div>
+        <div className="cx-cue" aria-hidden="true"><span>Scorri</span><b /></div>
+      </header>
 
       {/* STATS */}
-      <section className="stats" aria-label="Risultati">
+      <section className="cx-stats" aria-label="Risultati">
         <div className="stats-grid">
           <div className="stat reveal">
             <div className="num grad-text">
@@ -72,24 +150,31 @@ function Landing() {
         </div>
       </section>
 
-      {/* PROBLEMA */}
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[...MARQUEE, ...MARQUEE].map((t, i) => (
+            <span key={i}>{t}<b /></span>
+          ))}
+        </div>
+      </div>
+
+      {/* PROBLEMA: scena pinned */}
+      <LeadScene />
+
       <section className="section-pad problema">
         <div className="wrap">
-          <span className="section-label reveal">01 · Il problema</span>
-          <h2 className="reveal" style={{ marginTop: '22px' }}>
-            Stai perdendo <span className="grad-text">ore e clienti</span>. Entrambi hanno un costo.
-          </h2>
+          <div className="chain reveal" aria-label="Ogni azienda funziona allo stesso modo">
+            <span>Marketing</span><i>→</i><span>Vendita</span><i>→</i><span>Chiusura</span><i>→</i>
+            <span>Onboarding</span><i>→</i><span>Delivery</span><i>→</i><span>Post-vendita</span>
+          </div>
           <div className="body reveal">
+            <p>Ogni azienda funziona esattamente allo stesso modo: Marketing → Vendita → Chiusura → Onboarding → Delivery → Post-vendita.</p>
             <p>
-              Ogni azienda funziona esattamente allo stesso modo:
-              Marketing → Vendita → Chiusura → Onboarding → Delivery → Post-vendita
-            </p>
-            <p style={{ marginTop: '22px' }}>
               Se perdi clienti nel marketing, non importa avere un ottimo prodotto.
               Se non gestisci bene il post-vendita, perdi ricavi anche con molte vendite.
               Potresti ampliare il team, ma il problema non è quante persone hai, è su cosa stanno investendo il loro tempo.
-              Non serve più personale: serve che il lavoro ripetitivo smetta di assorbire risorse preziose.
             </p>
+            <p><strong>Non serve più personale: serve che il lavoro ripetitivo smetta di assorbire risorse preziose.</strong></p>
           </div>
           <a href="#automazioni" className="arrow-link reveal">
             Vedi cosa si può automatizzare nella tua azienda <span className="ar">→</span>
@@ -110,59 +195,69 @@ function Landing() {
             <p className="svc-niche">Ideale per studi professionali, cliniche estetiche, agenzie immobiliari e imprenditori a Torino e in tutta Italia: dove un appuntamento perso vale centinaia di euro.</p>
           </div>
 
-          <div className="svc-grid">
-            <article className="svc-card reveal">
-              <div className="svc-icon svc-icon--violet">⚙️</div>
+          <div className="svc-list">
+            <article className="svc-row reveal">
+              <span className="svc-idx">01</span>
               <h3>Automatizzazioni su misura</h3>
-              <p>Se si fa a mano e si ripete, si può automatizzare. Lead generation, preventivi automatici, qualificatori di lead, risposte, prenotazione appuntamenti e connessione dei tuoi strumenti.</p>
-              <div className="svc-tags">
+              <div>
+                <p>Se si fa a mano e si ripete, si può automatizzare. Lead generation, preventivi automatici, qualificatori di lead, risposte, prenotazione appuntamenti e connessione dei tuoi strumenti.</p>
+                <div className="svc-tags">
                 <span className="svc-tag">Lead generation</span>
                 <span className="svc-tag">Preventivi automatici</span>
                 <span className="svc-tag">Qualificatore lead</span>
               </div>
+              </div>
             </article>
 
-            <article className="svc-card reveal">
-              <div className="svc-icon svc-icon--cyan">🤖</div>
+            <article className="svc-row reveal">
+              <span className="svc-idx">02</span>
               <h3>Chatbot e Agente AI</h3>
-              <p>Un assistente che risponde e vende per te 24/7. Addestrato con il tuo business, il tuo brand e i tuoi processi, connesso al tuo WhatsApp o al tuo sito.</p>
-              <div className="svc-tags">
+              <div>
+                <p>Un assistente che risponde e vende per te 24/7. Addestrato con il tuo business, il tuo brand e i tuoi processi, connesso al tuo WhatsApp o al tuo sito.</p>
+                <div className="svc-tags">
                 <span className="svc-tag">Bot WhatsApp</span>
                 <span className="svc-tag">Assistenza 24/7</span>
                 <span className="svc-tag">CRM connesso</span>
               </div>
+              </div>
             </article>
 
-            <article className="svc-card reveal">
-              <div className="svc-icon svc-icon--blue">🖥️</div>
+            <article className="svc-row reveal">
+              <span className="svc-idx">03</span>
               <h3>Siti web e applicazioni</h3>
-              <p>Siti web, landing page e funnel che vendono, e app su misura per il tuo business. Design curato, veloci e pronti a convertire le visite in clienti.</p>
-              <div className="svc-tags">
+              <div>
+                <p>Siti web, landing page e funnel che vendono, e app su misura per il tuo business. Design curato, veloci e pronti a convertire le visite in clienti.</p>
+                <div className="svc-tags">
                 <span className="svc-tag">Siti & landing</span>
                 <span className="svc-tag">Funnel di vendita</span>
                 <span className="svc-tag">App su misura</span>
               </div>
+              </div>
             </article>
 
-            <article className="svc-card reveal">
-              <div className="svc-icon svc-icon--teal">🔧</div>
+            <article className="svc-row reveal">
+              <span className="svc-idx">04</span>
               <h3>Software su misura</h3>
-              <p>Sviluppo il sistema che il tuo business necessita: il tuo CRM proprietario, pannelli di controllo, strumenti interni e piattaforme costruite al tuo modo di lavorare.</p>
-              <div className="svc-tags">
+              <div>
+                <p>Sviluppo il sistema che il tuo business necessita: il tuo CRM proprietario, pannelli di controllo, strumenti interni e piattaforme costruite al tuo modo di lavorare.</p>
+                <div className="svc-tags">
                 <span className="svc-tag">CRM proprietario</span>
                 <span className="svc-tag">Pannelli & dashboard</span>
                 <span className="svc-tag">Strumenti interni</span>
               </div>
+              </div>
             </article>
 
-            <article className="svc-card reveal">
-              <div className="svc-icon svc-icon--blue">✦</div>
+            <article className="svc-row reveal">
+              <span className="svc-idx">05</span>
               <h3>Presenza online, senza il tuo tempo</h3>
-              <p>Il tuo avatar AI che comunica con il tuo volto, la tua voce e il tuo stile. Strategia, piano editoriale e contenuti: pubblicati senza bloccare la tua agenda.</p>
-              <div className="svc-tags">
+              <div>
+                <p>Il tuo avatar AI che comunica con il tuo volto, la tua voce e il tuo stile. Strategia, piano editoriale e contenuti: pubblicati senza bloccare la tua agenda.</p>
+                <div className="svc-tags">
                 <span className="svc-tag">Avatar AI</span>
                 <span className="svc-tag">Piano editoriale</span>
                 <span className="svc-tag">Produzione contenuti</span>
+              </div>
               </div>
             </article>
           </div>
@@ -178,25 +273,26 @@ function Landing() {
           </div>
 
           <div className="steps">
-            <div className="step reveal">
-              <div className="s-num s-grad">01</div>
+            <div className="steps-fill" aria-hidden="true" />
+            <div className="step">
+              <div className="s-num">01</div>
               <h3>Analisi</h3>
               <div className="s-time">1 incontro · 30 minuti</div>
               <p>Capiamo quali processi consumano più ore e dove stai perdendo lead.</p>
             </div>
-            <div className="step reveal">
+            <div className="step">
               <div className="s-num">02</div>
               <h3>Progettazione</h3>
               <div className="s-time">3–5 giorni</div>
               <p>Stabiliamo cosa automatizzare, in quale ordine, con gli strumenti che hai già.</p>
             </div>
-            <div className="step reveal">
+            <div className="step">
               <div className="s-num">03</div>
               <h3>Costruzione</h3>
               <div className="s-time">2–3 settimane</div>
               <p>Costruiamo e testiamo il sistema. Nessun codice da parte tua. Nessuna configurazione.</p>
             </div>
-            <div className="step reveal">
+            <div className="step">
               <div className="s-num">04</div>
               <h3>Avvio</h3>
               <div className="s-time">Online + monitoraggio</div>
@@ -219,14 +315,14 @@ function Landing() {
           </div>
 
           <div className="cases">
-            <article className="case reveal">
-              <span className="c-co">Studio Dentistico</span>
-              <div className="metric grad-text">
-                −80%
-                <span className="metric-sub">no-show dopo l'automazione</span>
+            <article className="case" style={{ '--k': 0 }}>
+              <div>
+                <span className="c-co">Studio Dentistico</span>
+                <div className="metric">−80%
+                <span className="metric-sub">no-show dopo l'automazione</span></div>
               </div>
-              <div className="case-div" />
-              <div className="row">
+              <div className="case-body">
+                <div className="row">
                 <span className="rl">Problema</span>
                 <span className="rv">Il 30–40% degli appuntamenti saltava senza preavviso. La segreteria passava ore a richiamare i pazienti.</span>
               </div>
@@ -234,16 +330,17 @@ function Landing() {
                 <span className="rl">Soluzione</span>
                 <span className="rv">Sequenza automatica di conferma e reminder via WhatsApp: nessun intervento manuale, zero dimenticanze.</span>
               </div>
+              </div>
             </article>
 
-            <article className="case reveal">
-              <span className="c-co">Clinica Estetica</span>
-              <div className="metric grad-text">
-                14h
-                <span className="metric-sub">risparmiate a settimana su burocrazia e follow-up</span>
+            <article className="case" style={{ '--k': 1 }}>
+              <div>
+                <span className="c-co">Clinica Estetica</span>
+                <div className="metric">14h
+                <span className="metric-sub">risparmiate a settimana su burocrazia e follow-up</span></div>
               </div>
-              <div className="case-div" />
-              <div className="row">
+              <div className="case-body">
+                <div className="row">
                 <span className="rl">Problema</span>
                 <span className="rv">Ogni paziente richiedeva inserimento manuale: cartella, modulo di consenso, reminder pre-procedura e follow-up post-trattamento. La segreteria gestiva tutto a mano.</span>
               </div>
@@ -251,16 +348,17 @@ function Landing() {
                 <span className="rl">Soluzione</span>
                 <span className="rv">Flusso automatizzato dalla prenotazione: modulo anamnestico inviato in anticipo via WhatsApp, reminder 48h e 2h prima della procedura, follow-up post-trattamento per raccogliere feedback e proporre il prossimo appuntamento.</span>
               </div>
+              </div>
             </article>
 
-            <article className="case reveal">
-              <span className="c-co">Agenzia Immobiliare</span>
-              <div className="metric grad-text">
-                3×
-                <span className="metric-sub">lead lavorati con lo stesso team</span>
+            <article className="case" style={{ '--k': 2 }}>
+              <div>
+                <span className="c-co">Agenzia Immobiliare</span>
+                <div className="metric">3×
+                <span className="metric-sub">lead lavorati con lo stesso team</span></div>
               </div>
-              <div className="case-div" />
-              <div className="row">
+              <div className="case-body">
+                <div className="row">
                 <span className="rl">Problema</span>
                 <span className="rv">I lead arrivavano da più canali e venivano persi o seguiti in ritardo. Nessuna sequenza definita di follow-up.</span>
               </div>
@@ -268,22 +366,24 @@ function Landing() {
                 <span className="rl">Soluzione</span>
                 <span className="rv">Assistente AI che qualifica ogni richiesta, risponde entro 2 minuti e attiva il follow-up giusto in base al profilo del lead.</span>
               </div>
+              </div>
             </article>
 
-            <article className="case reveal">
-              <span className="c-co">Imprenditore / Personal Brand</span>
-              <div className="metric grad-text">
-                0h
-                <span className="metric-sub">passate davanti alla telecamera ogni settimana</span>
+            <article className="case" style={{ '--k': 3 }}>
+              <div>
+                <span className="c-co">Imprenditore / Personal Brand</span>
+                <div className="metric">0h
+                <span className="metric-sub">passate davanti alla telecamera ogni settimana</span></div>
               </div>
-              <div className="case-div" />
-              <div className="row">
+              <div className="case-body">
+                <div className="row">
                 <span className="rl">Problema</span>
                 <span className="rv">Costruire autorevolezza online richiede tempo: idee da trovare, video da registrare, contenuti da pianificare. Per molti imprenditori la creazione di contenuti diventa l'ultima priorità.</span>
               </div>
               <div className="row">
                 <span className="rl">Soluzione</span>
                 <span className="rv">Creiamo una versione digitale di te, capace di comunicare con il tuo volto, la tua voce e il tuo stile. Ci occupiamo di strategia, calendario editoriale e idee contenuto, così pubblichi con continuità senza bloccare la tua agenda.</span>
+              </div>
               </div>
             </article>
           </div>

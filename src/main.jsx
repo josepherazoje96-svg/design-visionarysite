@@ -2,9 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './styles/tailwind.css'
-import './styles/styles.css'
-import './styles/glass.css'
-import './styles/scroll.css'
+import './styles/forms.css'
+import './styles/cinema.css'
+import './styles/liquid.css'
 import App from './App.jsx'
 
 if ('scrollRestoration' in window.history) {

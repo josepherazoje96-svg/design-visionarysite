@@ -36,13 +36,10 @@ export function Founder() {
         </div>
 
         <div className="founder-layout">
-          <div className="founder-timeline founder-timeline--compact">
+          <div className="founder-timeline">
             {STEPS.map((step) => (
               <div className="founder-step reveal" key={step.num}>
-                <div className="founder-marker">
-                  <span className="founder-dot">{step.num}</span>
-                  <span className="founder-line" />
-                </div>
+                <span className="founder-dot">{step.num}</span>
                 <div className="founder-card">
                   <span className="founder-eyebrow">{step.eyebrow}</span>
                   <h3 className="founder-title">{step.title}</h3>
@@ -52,9 +49,7 @@ export function Founder() {
             ))}
 
             <div className="founder-step reveal">
-              <div className="founder-marker">
-                <span className="founder-dot">04</span>
-              </div>
+              <span className="founder-dot">04</span>
               <div className="founder-card founder-card--now">
                 <span className="founder-eyebrow">Oggi</span>
                 <h3 className="founder-title">Visionary: infrastrutture intelligenti per imprenditori ambiziosi</h3>
@@ -72,11 +67,14 @@ export function Founder() {
           </div>
 
           <div className="founder-photo-col reveal">
-            <img
-              src="/assets/ricrea_l'immagine_in_verticale_2K_202605271418.jpeg"
-              alt="Joseph, fondatore di Visionary"
-              className="founder-photo"
-            />
+            <div className="founder-frame">
+              <img
+                src="/assets/ricrea_l'immagine_in_verticale_2K_202605271418.jpeg"
+                alt="Joseph, fondatore di Visionary"
+                className="founder-photo"
+              />
+              <span className="founder-tag">Joseph · Fondatore</span>
+            </div>
           </div>
         </div>
       </div>
