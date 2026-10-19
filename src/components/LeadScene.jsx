@@ -33,7 +33,7 @@ export function LeadScene() {
       const r = el.getBoundingClientRect()
       const total = r.height - window.innerHeight
       const v = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0
-      setP(Math.round(v * 100) / 100)
+      setP(Math.round(v * 50) / 50)
     }
     const on = () => {
       if (!ticking) {

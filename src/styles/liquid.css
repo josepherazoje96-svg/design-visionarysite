@@ -79,7 +79,7 @@
 /* ---------- Ingresso scaglionato ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .rise { animation: rise .95s cubic-bezier(.22,1,.36,1) both; animation-delay: var(--d, 0s); }
-  @keyframes rise { from { opacity: 0; transform: translateY(22px); filter: blur(6px); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } }
 }
 
 /* ---------- Hero: parallasse del video ---------- */
@@ -232,3 +232,34 @@
 .nav { padding-inline: var(--pad-wide); }
 .nav-pill { max-width: none; }
 .cx-hero-inner { max-width: none; padding-inline: var(--pad-wide); }
+
+/* ============================================================
+   Prestazioni
+   - nessun backdrop-filter sulle card (si ridisegnavano a ogni frame
+     delle luci animate e del video)
+   - blur ridotto sui pochi elementi che lo mantengono
+   - niente filter animati o enormi, niente maschera sul video
+   ============================================================ */
+.lg, .cta-card, .cta-card.lg, .cta-card.glass-strong, .glass-strong, .step .s-num {
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.lg-strong, .btn-glass, .nav-pill, .cx-eyebrow, .arrow-link {
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+}
+.menu { -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.amb { filter: none; opacity: .7; }
+.cx-video { -webkit-mask-image: none; mask-image: none; scale: 1.04; transform: translate3d(22vw, calc(var(--hp, 0) * 70px), 0); will-change: transform; }
+.stat .num, .metric, .cr-total, .cr-kpi-value { filter: none; }
+.cx-h1 em { filter: none; }
+.cx-hero { contain: paint; }
+.marquee-track { will-change: transform; }
+.lg::before { will-change: opacity; }
+@media (max-width: 720px) {
+  .amb--3 { display: none; }
+  .nav-pill, .btn-glass, .cx-eyebrow { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(20,20,22,.7); }
+}
+
+/* luci d'ambiente: sfumatura lunga al posto del blur, così non si vede il bordo */
+.amb--1 { background: radial-gradient(closest-side, rgba(47,123,255,.42), rgba(47,123,255,.2) 35%, rgba(0,242,255,.07) 62%, transparent 100%); }
+.amb--2 { background: radial-gradient(closest-side, rgba(112,0,255,.38), rgba(112,0,255,.17) 38%, rgba(0,242,255,.06) 65%, transparent 100%); }
+.amb--3 { background: radial-gradient(closest-side, rgba(0,242,255,.24), rgba(0,242,255,.09) 45%, transparent 100%); }

@@ -45,12 +45,20 @@ export function useAnimations() {
     // Liquid glass: pannelli riconosciuti qui, luce che segue il cursore
     const GLASS = '.stat, .lane, .calc-inputs, .calc-result, .calc-report-cta, .audit-form-wrap, .faq-item, .cta-card, .founder-frame, .cr-kpi'
     document.querySelectorAll(GLASS).forEach((el) => el.classList.add('lg'))
+    let glassRaf = 0
+    let glassEv = null
     const onGlass = (e) => {
-      const el = e.target.closest && e.target.closest('.lg')
-      if (!el) return
-      const r = el.getBoundingClientRect()
-      el.style.setProperty('--mx', `${e.clientX - r.left}px`)
-      el.style.setProperty('--my', `${e.clientY - r.top}px`)
+      glassEv = e
+      if (glassRaf) return
+      glassRaf = requestAnimationFrame(() => {
+        glassRaf = 0
+        const ev = glassEv
+        const el = ev.target.closest && ev.target.closest('.lg')
+        if (!el) return
+        const r = el.getBoundingClientRect()
+        el.style.setProperty('--mx', `${ev.clientX - r.left}px`)
+        el.style.setProperty('--my', `${ev.clientY - r.top}px`)
+      })
     }
     document.addEventListener('pointermove', onGlass, { passive: true })
 
@@ -71,24 +79,58 @@ export function useAnimations() {
       })
     }
 
+    // il video della hero si ferma quando esce dallo schermo
+    let videoIo = null
+    const heroVideo = hero && hero.querySelector('video')
+    if (heroVideo && 'IntersectionObserver' in window) {
+      videoIo = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting && !reduce) heroVideo.play().catch(() => {})
+        else heroVideo.pause()
+      }, { threshold: 0.05 })
+      videoIo.observe(hero)
+    }
+
     let ticking = false
+    let maxScroll = 1
+    let heroH = window.innerHeight
+    let stepsTop = 0
+    let stepsH = 1
+    let lastHp = -1
+    let wasScrolled = false
+    function measure() {
+      const vh = window.innerHeight
+      maxScroll = Math.max(1, docEl.scrollHeight - vh)
+      heroH = (hero && hero.offsetHeight) || vh
+      if (steps) {
+        const r = steps.getBoundingClientRect()
+        stepsTop = r.top + window.scrollY
+        stepsH = r.height || 1
+      }
+    }
     function frame() {
       ticking = false
       const y = window.scrollY
       const vh = window.innerHeight
-      const h = docEl.scrollHeight - vh
-      bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`
-      if (nav) nav.classList.toggle('scrolled', y > 24)
-
-      if (heroInner && !reduce) {
-        hero.style.setProperty('--hp', Math.min(y / (hero.offsetHeight || vh), 1).toFixed(3))
+      bar.style.transform = `scaleX(${Math.min(1, y / maxScroll).toFixed(4)})`
+      const scrolled = y > 24
+      if (scrolled !== wasScrolled) {
+        wasScrolled = scrolled
+        if (nav) nav.classList.toggle('scrolled', scrolled)
       }
-      if (steps) {
-        const r = steps.getBoundingClientRect()
-        const p = (vh * 0.6 - r.top) / r.height
+      if (heroInner && !reduce) {
+        const hp = y > heroH ? 1 : Math.round((y / heroH) * 100) / 100
+        if (hp !== lastHp) {
+          lastHp = hp
+          hero.style.setProperty('--hp', hp)
+        }
+      }
+      if (steps && y + vh > stepsTop - 200 && y < stepsTop + stepsH + 200) {
+        const p = (vh * 0.6 - (stepsTop - y)) / stepsH
         steps.style.setProperty('--pp', Math.min(1, Math.max(0, p)).toFixed(3))
       }
     }
+    measure()
+    window.addEventListener('load', measure)
     function request() {
       if (!ticking) {
         ticking = true
@@ -97,11 +139,16 @@ export function useAnimations() {
     }
     request()
     window.addEventListener('scroll', request, { passive: true })
+    window.addEventListener('resize', measure)
     window.addEventListener('resize', request)
 
     return () => {
       window.removeEventListener('scroll', request)
       window.removeEventListener('resize', request)
+      window.removeEventListener('resize', measure)
+      window.removeEventListener('load', measure)
+      cancelAnimationFrame(glassRaf)
+      if (videoIo) videoIo.disconnect()
       document.removeEventListener('pointermove', onGlass)
       magnets.forEach((fn) => fn())
       if (io) io.disconnect()

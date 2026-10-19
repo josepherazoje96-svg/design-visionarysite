@@ -12,8 +12,7 @@ import CookiePolicy from './pages/CookiePolicy'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 
-const HERO_VIDEO =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4'
+const HERO_VIDEO = '/assets/hero.mp4'
 
 export default function App() {
   return (
@@ -94,6 +93,7 @@ function Landing() {
             loop
             playsInline
             preload="auto"
+            poster="/assets/hero-poster.jpg"
             ref={(el) => {
               if (el && window.matchMedia('(prefers-reduced-motion: reduce)').matches) el.pause()
             }}
