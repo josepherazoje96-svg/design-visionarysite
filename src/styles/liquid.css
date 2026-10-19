@@ -352,4 +352,7 @@ html { overflow-x: clip; }
   .cx-hero-inner { padding-top: 112px; padding-bottom: 96px; }
   .cx-sub { color: #c4c4cb; }
 }
-@media (max-width: 720px) { .cx-video { transform: translate3d(16vw, 0, 0); } }
+@media (max-width: 720px) { .cx-video { transform: none; scale: 1; object-position: 56% center; } }
+
+/* browser senza overflow: clip (Safari < 16): evita lo scorrimento laterale */
+@supports not (overflow: clip) { html { overflow-x: hidden; } }

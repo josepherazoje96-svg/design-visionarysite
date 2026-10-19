@@ -437,7 +437,7 @@ h1, h2, h3 {
   .calc-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
-  .cx-video { object-position: 43% center; transform: translate3d(16vw, 0, 0); -webkit-mask-image: none; mask-image: none; }
+  .cx-video { object-position: 56% center; transform: none; -webkit-mask-image: none; mask-image: none; }
   .cx-plate::after { background: linear-gradient(to bottom, rgba(5,5,5,.72) 0%, rgba(5,5,5,.34) 24%, rgba(5,5,5,.5) 56%, rgba(5,5,5,.9) 82%, #050505 100%); }
   .nav-links { display: none; }
   .lead-scene { height: 155vh; }
