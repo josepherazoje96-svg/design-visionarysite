@@ -328,3 +328,28 @@
 }
 .odo-d { padding-inline: .03em; margin-inline: -.01em; }
 .odo-d::before { background-image: linear-gradient(90deg, #00f2ff 0%, #2f7bff 100%); }
+
+/* Mobile: niente contenuto che esce di lato (l'alone della scena allargava la pagina a ~500px) */
+.lead-scene { overflow-x: clip; }
+html { overflow-x: clip; }
+
+/* ---------- Mobile: ritocchi ---------- */
+.step .s-num { background: #0a0a0c; }          /* la linea del processo non passa più dietro i numeri */
+.step.in .s-num { background: #06242a; }
+.faq-more { display: none; }
+@media (max-width: 720px) {
+  /* FAQ a comparsa: prime 3 visibili, le altre con il pulsante */
+  .faq-grid:not(.is-all) .faq-extra { display: none; }
+  .faq-more { display: inline-flex; margin: 22px auto 0; width: 100%; justify-content: center; }
+  .faq-foot { margin-top: 28px; }
+
+  /* Hero: il testo non finisce sopra il portale chiaro */
+  .cx-plate::after {
+    background:
+      linear-gradient(to bottom, rgba(5,5,5,.8) 0%, rgba(5,5,5,.66) 34%, rgba(5,5,5,.7) 62%, rgba(5,5,5,.92) 86%, #050505 100%),
+      linear-gradient(to right, rgba(5,5,5,.5), rgba(5,5,5,0) 85%);
+  }
+  .cx-hero-inner { padding-top: 112px; padding-bottom: 96px; }
+  .cx-sub { color: #c4c4cb; }
+}
+@media (max-width: 720px) { .cx-video { transform: translate3d(16vw, 0, 0); } }

@@ -35,8 +35,12 @@ const FAQS = [
   },
 ]
 
+// su smartphone si vedono le prime domande, le altre compaiono con il pulsante
+const FAQ_VISIBLE_MOBILE = 3
+
 export function FAQ() {
   const [openIdx, setOpenIdx] = useState(null)
+  const [showAll, setShowAll] = useState(false)
   const panelRefs = useRef([])
 
   const toggle = (idx) => {
@@ -51,9 +55,9 @@ export function FAQ() {
           <h2><span className="grad-text">Risposte dirette</span>.</h2>
         </div>
 
-        <div className="faq-grid reveal">
+        <div className={`faq-grid reveal${showAll ? ' is-all' : ''}`}>
           {FAQS.map((faq, idx) => (
-            <div key={idx} className={`faq-item${openIdx === idx ? ' open' : ''}`}>
+            <div key={idx} className={`faq-item${openIdx === idx ? ' open' : ''}${idx >= FAQ_VISIBLE_MOBILE ? ' faq-extra' : ''}`}>
               <button className="faq-q" onClick={() => toggle(idx)}>
                 {faq.q} <span className="faq-icon" />
               </button>
@@ -71,6 +75,15 @@ export function FAQ() {
             </div>
           ))}
         </div>
+
+        <button
+          type="button"
+          className="faq-more btn btn-glass"
+          aria-expanded={showAll}
+          onClick={() => setShowAll((v) => !v)}
+        >
+          {showAll ? 'Mostra meno' : `Mostra tutte le domande (${FAQS.length})`}
+        </button>
 
         <div className="faq-foot reveal">
           <a href="#contatto" className="arrow-link">
