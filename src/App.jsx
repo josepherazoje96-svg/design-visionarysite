@@ -133,17 +133,17 @@ function Landing() {
         <div className="stats-grid">
           <div className="stat reveal">
             <div className="num grad-text">
-              <Odometer value={10} />–<Odometer value={30} /><span style={{ fontSize: '0.5em' }}>h</span>
+              <Odometer value={10} />–<Odometer value={30} /><span className="unit">h</span>
             </div>
             <div className="lab">di lavoro manuale eliminato ogni settimana</div>
           </div>
           <div className="stat reveal">
-            <div className="num grad-text">&lt; <Odometer value={2} /> min</div>
+            <div className="num grad-text">&lt;<Odometer value={2} /><span className="unit">min</span></div>
             <div className="lab">tempo medio di risposta ai clienti</div>
           </div>
           <div className="stat reveal">
             <div className="num grad-text">
-              <Odometer value={2} />–<Odometer value={4} /> sett.
+              <Odometer value={2} />–<Odometer value={4} /><span className="unit">sett.</span>
             </div>
             <div className="lab">dal primo incontro al sistema online</div>
           </div>

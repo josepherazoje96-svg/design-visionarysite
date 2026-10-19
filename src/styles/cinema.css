@@ -233,7 +233,7 @@ h1, h2, h3 {
 .stat .lab { margin-top: 14px; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); max-width: 26ch; }
 
 /* ---------- SCENA: lead alle 22:47 ---------- */
-.lead-scene { position: relative; height: 210vh; }
+.lead-scene { position: relative; height: 165vh; }
 .lead-stage {
   position: sticky; top: 0; height: 100svh;
   display: flex; flex-direction: column; justify-content: center; gap: clamp(20px, 3.4vh, 40px);
@@ -440,7 +440,7 @@ h1, h2, h3 {
   .cx-video { object-position: 43% center; transform: none; -webkit-mask-image: none; mask-image: none; }
   .cx-plate::after { background: linear-gradient(to bottom, rgba(5,5,5,.72) 0%, rgba(5,5,5,.34) 24%, rgba(5,5,5,.5) 56%, rgba(5,5,5,.9) 82%, #050505 100%); }
   .nav-links { display: none; }
-  .lead-scene { height: 190vh; }
+  .lead-scene { height: 155vh; }
   .lead-stage { padding-top: 78px; gap: 14px; }
   .lead-lanes { grid-template-columns: 1fr; gap: 10px; }
   .lane { padding: 14px 16px; gap: 10px; }

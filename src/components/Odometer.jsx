@@ -1,67 +1,39 @@
 import { useEffect, useRef, useState } from 'react'
 
-// Gas-pump style counter: digits count up in strict order (0,1,2,3…),
-// looping a couple of times fast, then slowing down and stopping exactly
-// on the target number — triggered once the element scrolls into view.
-export function Odometer({ value, duration = 1800, loops = 2 }) {
-  const elRef = useRef(null)
-  const [display, setDisplay] = useState(value)
-  const started = useRef(false)
+// Cifre a rullo: ogni cifra scorre in verticale fino al valore, veloce e sfocata
+// durante il movimento. L'animazione è solo CSS (vedi liquid.css, .odo).
+// Nel DOM resta soltanto il numero vero, leggibile da chi non vede l'animazione.
+export function Odometer({ value }) {
+  const ref = useRef(null)
+  const [state, setState] = useState('idle') // idle | go | static
 
   useEffect(() => {
-    const el = elRef.current
+    const el = ref.current
     if (!el) return
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) {
-      setDisplay(value)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      setState('static')
       return
     }
-
-    const run = () => {
-      if (started.current) return
-      started.current = true
-
-      const span = Math.max(20, Math.round(Math.abs(value)) + 15)
-      const totalSteps = loops * (span + 1) + value
-      let raf
-      let i = 0
-      let stepStart = null
-
-      function tick(t) {
-        if (stepStart === null) stepStart = t
-        const progress = i / totalSteps
-        const delay = 14 + Math.pow(progress, 2.6) * 170
-
-        if (t - stepStart >= delay) {
-          stepStart = t
-          i++
-          if (i >= totalSteps) {
-            setDisplay(value)
-            return
-          }
-          setDisplay(i % (span + 1))
-        }
-        raf = requestAnimationFrame(tick)
-      }
-      raf = requestAnimationFrame(tick)
-      return () => cancelAnimationFrame(raf)
-    }
-
     const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            run()
-            io.unobserve(e.target)
-          }
-        })
+      ([e]) => {
+        if (e.isIntersecting) {
+          setState('go')
+          io.disconnect()
+        }
       },
       { threshold: 0.4 }
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [value, duration, loops])
+  }, [])
 
-  return <span ref={elRef}>{display}</span>
+  const digits = String(value).split('')
+  return (
+    <span ref={ref} className={`odo odo--${state}`}>
+      <span className="sr-only">{value}</span>
+      {digits.map((d, i) => (
+        <span className="odo-d" key={i} aria-hidden="true" style={{ '--t': Number(d), '--i': i }} />
+      ))}
+    </span>
+  )
 }
