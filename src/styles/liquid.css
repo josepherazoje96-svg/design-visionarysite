@@ -356,3 +356,6 @@ html { overflow-x: clip; }
 
 /* browser senza overflow: clip (Safari < 16): evita lo scorrimento laterale */
 @supports not (overflow: clip) { html { overflow-x: hidden; } }
+
+/* Mobile: niente pillole Marketing → Vendita → …, resta solo il testo sotto */
+@media (max-width: 720px) { .chain { display: none; } }

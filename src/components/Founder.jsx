@@ -3,7 +3,7 @@ const STEPS = [
     num: '01',
     eyebrow: 'Le origini',
     title: 'Bartender a 18 anni: la prima lezione di sistema',
-    body: "Gestire 80 clienti contemporaneamente, con ordini che si sovrappongono, tempi stretti e zero margine di errore. Dietro un bancone impari che senza un sistema preciso, il caos vince sempre. Joseph impara presto che la vera abilità non è lavorare di più: è costruire un metodo che funzioni anche quando sei sotto pressione.",
+    body: "A 18 anni, tra studio e lavoro, sceglie l'indipendenza e fa il bartender. Tra decine di clienti e ordini che si sovrappongono capisce che non basta lavorare duro: serve metodo. Dietro quel bancone nascono le basi di Visionary.",
   },
   {
     num: '02',

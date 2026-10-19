@@ -288,7 +288,6 @@ h1, h2, h3 {
   font-size: clamp(1.1rem, 2vw, 1.7rem); font-weight: 600; letter-spacing: -.02em; text-align: center;
   transition: opacity .6s, transform .6s; min-height: 1.5em;
 }
-.lead-note { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--muted-2); text-transform: uppercase; }
 
 /* catena del problema */
 .problema { border-top: 1px solid var(--line); }

@@ -123,7 +123,6 @@ export function LeadScene() {
         <p className="lead-verdict" style={{ opacity: p > 0.8 ? 1 : 0, transform: p > 0.8 ? 'none' : 'translateY(10px)' }}>
           Stessa richiesta. Stessa ora. <span className="cy">Due esiti diversi.</span>
         </p>
-        <p className="lead-note">Scena di esempio</p>
       </div>
     </section>
   )
